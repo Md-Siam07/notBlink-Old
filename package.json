@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:elements": "ng build --prod --output-hashing none && node concatenate.js"
   },
   "private": true,
   "dependencies": {
@@ -14,6 +15,7 @@
     "@angular/common": "^14.0.0-next.0",
     "@angular/compiler": "^14.0.0-next.0",
     "@angular/core": "^14.0.0-next.0",
+    "@angular/elements": "^13.2.2",
     "@angular/forms": "^14.0.0-next.0",
     "@angular/platform-browser": "^14.0.0-next.0",
     "@angular/platform-browser-dynamic": "^14.0.0-next.0",
