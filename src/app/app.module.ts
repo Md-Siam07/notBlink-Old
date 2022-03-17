@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { ScreenRecordingComponent } from './screen-recording/screen-recording.component';
 import  { Injector} from '@angular/core';
 import  { createCustomElement } from '@angular/elements';
+import { EyeMovementComponent } from './eye-movement/eye-movement.component';
+import { TrackWindowComponent } from './track-window/track-window.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScreenRecordingComponent
+    ScreenRecordingComponent,
+    EyeMovementComponent,
+    TrackWindowComponent
   ],
   imports: [
     BrowserModule,
