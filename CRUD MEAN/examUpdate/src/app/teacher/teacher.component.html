@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="col s5">
+              <form #examform="ngForm" (ngSubmit)="onSubmit(examform)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="teacherService.selectedTeacher._id">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="teacherService.selectedTeacher.name" placeholder="Enter exam name" required>
+                    <label>Name :
+                      <label class="red-text">*</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="date" name="position" #name="ngModel" [(ngModel)]="teacherService.selectedTeacher.position" placeholder="Eg : Snr. Developer">
+                    <label>Date :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="time" name="office" #name="ngModel" [(ngModel)]="teacherService.selectedTeacher.office" placeholder="Enter office location">
+                    <label>Time :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="salary" #name="ngModel" [(ngModel)]="teacherService.selectedTeacher.salary" placeholder="Salary per annum">
+                    <label>Salary :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn btn-custom right" type="button" (click)="resetForm(examform)">Reset</button>
+                    <button class="btn btn-custom right" type="submit" [disabled]="!examform.valid">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col s7">
+                <table class="responsive-table highlight">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tr *ngFor="let tcr of teacherService.teachers">
+                      <td>{{tcr.name}}</td>
+                      <td>{{tcr.position}}</td>
+                      <td>{{tcr.office}}</td>
+                      <td>
+                          <a class="action-btn" (click)="onEdit(tcr)">
+                            <i class="material-icons">edit</i>
+                          </a>
+                          <a class="action-btn" (click)="onDelete(tcr._id,examform)">
+                            <i class="material-icons">delete</i>
+                          </a>
+                        </td>
+                    </tr>
+                  </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>

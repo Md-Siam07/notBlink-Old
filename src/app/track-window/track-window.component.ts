@@ -22,6 +22,15 @@ export class TrackWindowComponent implements OnInit {
     //alert("user leave korso ken?")
   } 
   
+  scrHeight:any;
+  scrWidth:any;
+
+  @HostListener('window:resize', ['$event'])
+    getScreenSize(event:any) { 
+      this.scrHeight = window.innerHeight;
+      this.scrWidth = window.innerWidth;
+      console.log(this.scrHeight, this.scrWidth);
+  }
   playAudio(){
     let audio = new Audio();
     audio.src = "../../../assets/audio/FM9B3TC-alarm.mp3";
@@ -30,6 +39,8 @@ export class TrackWindowComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.scrHeight = window.innerHeight;
+    this.scrWidth = window.innerWidth;
   }
 
 }

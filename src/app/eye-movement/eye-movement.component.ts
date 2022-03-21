@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+//import webgazer from 'webgazer/dist/webgazer.commonjs2';
 
+//var prediction = webgazer.getCurrentPrediction();
+  
 @Component({
   selector: 'custom-eye-movement',
   templateUrl: './eye-movement.component.html',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EyeMovementComponent implements OnInit {
 
-  constructor() { }
+  // if (prediction) {
+  //   var x = prediction.x;
+  //   var y = prediction.y;
+  // }
+  // constructor() { }
 
   ngOnInit(): void {
   }
